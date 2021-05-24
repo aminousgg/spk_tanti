@@ -256,7 +256,7 @@
                             <?php } ?>
                           </tbody>
                         </table>
-                        <button class="btn btn-success float-right" data-toggle="modal" data-target="#m_pend_formal">Tambah</button>
+                        <button class="btn btn-primary float-right" data-toggle="modal" data-target="#m_pend_formal">Tambah</button>
                       </div>
                     </div>
                     <!--  -->
@@ -288,9 +288,29 @@
                             <?php } ?>
                           </tbody>
                         </table>
-                        <button class="btn btn-success float-right" data-toggle="modal" data-target="#m_pend_nonformal">Tambah</button>
+                        <button class="btn btn-primary float-right" data-toggle="modal" data-target="#m_pend_nonformal">Tambah</button>
                       </div>
                     </div>
+                    <?= form_open('main/insertNilai') ?>
+                      <div class="row">
+                            <p class="mb-0 ml-2 text-danger">Mohon mengisi nilai pada pendidikan terakhir anda !</p>
+                            <div class="col-6">
+                                <label>Nilai</label>
+                                <input type="number" step="0.01" class="form-control" name="nilai" value="<?= $pelamar['nilai'] ?>" required>
+                            </div>
+                            <div class="col-6">
+                                <label>Nilai Range</label>
+                                <select name="nilai_range" class="form-control" required>
+                                  <option value="">-- Pilih --</option>
+                                  <option <?php if($pelamar['range_nilai']=="4"){echo "selected";} ?> value="4">IPK (4)</option>
+                                  <option <?php if($pelamar['range_nilai']=="10"){echo "selected";} ?> value="10">Standar (10)</option>
+                                </select>
+                                <br>
+                                <button class="btn btn-primary float-right">Save</button>
+                            </div>
+                            
+                      </div>
+                    <?= form_close() ?>
                   </div>
                 </div>
 
@@ -328,7 +348,7 @@
                         <?php } ?>
                       </tbody>
                     </table>
-                    <button class="btn btn-success float-right" data-toggle="modal" data-target="#m_pekerjaan">Tambah</button>
+                    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#m_pekerjaan">Tambah</button>
                   </div>
                 </div>
 

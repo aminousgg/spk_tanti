@@ -297,4 +297,20 @@ class Main extends CI_Controller {
     }
 
 
+    public function insertNilai()
+    {
+        $data = [
+          'nilai' => $this->input->post('nilai'),
+          'range_nilai' => $this->input->post('range_nilai')
+        ];
+        $id_user = $this->sesi['id_user'];
+        $this->db->where('id_user', $id_user);
+        $cek = $this->db->update('pelamar',$data);
+        if($cek == true)
+        {
+            $this->session->set_flashdata('notif_1', 'Berhasil Menyimpan!');
+            redirect(base_url('main/datadiri'));
+        }
+    }
+
 }

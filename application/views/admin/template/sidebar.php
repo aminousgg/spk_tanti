@@ -47,7 +47,13 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link <?php if($side_row == 2){ echo "active"; } ?>">
+                    <a href="<?= base_url('admin/spk') ?>" class="nav-link <?php if($side_row == 2){ echo "active"; } ?>">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p>Analisis</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link <?php if($side_row == 3){ echo "active"; } ?>">
                       <i class="nav-icon fas fa-th"></i>
                       <p>Rekrutmen</p>
                     </a>
