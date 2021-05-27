@@ -36,7 +36,7 @@ insert  into `auth`(`id_user`,`username`,`password`,`token`,`status`,`level`) va
 (12,'aminousgg@gmail.com','aabff2636e4b909ef56bcbbd7c62064a',NULL,NULL,'User'),
 (13,'aminousgg@gmail.com','aabff2636e4b909ef56bcbbd7c62064a',NULL,NULL,'User'),
 (14,'michelle@gmail.com','aabff2636e4b909ef56bcbbd7c62064a',NULL,NULL,'User'),
-(15,'admin@amin.com','21232f297a57a5a743894a0e4a801fc3',NULL,NULL,'Admin'),
+(15,'admin@amin.com','aabff2636e4b909ef56bcbbd7c62064a',NULL,NULL,'Admin'),
 (16,'syahreza@gmail.com','ee25136ee204aa44362b5444bf6556f8',NULL,NULL,'User');
 
 /*Table structure for table `pelamar` */
@@ -59,21 +59,17 @@ CREATE TABLE `pelamar` (
   `img_cv` varchar(255) DEFAULT NULL,
   `img_sertif` varchar(255) DEFAULT NULL,
   `nilai` float(10,2) DEFAULT NULL,
-  `pend_sd` varchar(255) DEFAULT NULL,
-  `pend_sltp` varchar(255) DEFAULT NULL,
-  `pend_slta` varchar(255) DEFAULT NULL,
-  `pend_s1` varchar(255) DEFAULT NULL,
-  `pend_nonformal` varchar(255) DEFAULT NULL,
+  `range_nilai` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `pelamar` */
 
-insert  into `pelamar`(`id`,`id_user`,`nama`,`nik`,`tgl_lahir`,`tmp_lahir`,`no_hp`,`alamat`,`gender`,`foto`,`img_ijasah`,`img_ktp`,`img_cv`,`img_sertif`,`nilai`,`pend_sd`,`pend_sltp`,`pend_slta`,`pend_s1`,`pend_nonformal`) values 
-(1,10,'Nur Amin Nudin','3328132209980002','1998-09-22','Tegal','089667203086','Jl. Karya Bakti RT. 01/02 Kec. Dukuhturi','Laki-laki','10_me_persegi.jpg','10_Ijazah.jpg','10_Scan_KTP.pdf','10_mycv.pdf',NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(2,12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'default_profile.svg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(3,14,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'default_profile.svg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(6,16,'Syahreza Panca','8174724','2001-02-15','Semarang','0899872181','Jl. Sawung 3','Laki-laki','16_michellearabelle_profilepicture.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+insert  into `pelamar`(`id`,`id_user`,`nama`,`nik`,`tgl_lahir`,`tmp_lahir`,`no_hp`,`alamat`,`gender`,`foto`,`img_ijasah`,`img_ktp`,`img_cv`,`img_sertif`,`nilai`,`range_nilai`) values 
+(1,10,'Nur Amin Nudin','3328132209980002','1998-09-22','Tegal','089667203086','Jl. Karya Bakti RT. 01/02 Kec. Dukuhturi','Laki-laki','10_me_persegi.jpg','10_Ijazah.jpg','10_Scan_KTP.pdf','10_mycv.pdf',NULL,3.40,4),
+(2,12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'default_profile.svg',NULL,NULL,NULL,NULL,NULL,NULL),
+(3,14,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'default_profile.svg',NULL,NULL,NULL,NULL,NULL,NULL),
+(6,16,'Syahreza Panca','8174724','2001-02-15','Semarang','0899872181','Jl. Sawung 3','Laki-laki','16_michellearabelle_profilepicture.jpg',NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `pendidikan` */
 
