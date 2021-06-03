@@ -15,11 +15,11 @@ class SpkModel extends CI_Model {
                 'id'            => $row->id,
                 'id_user'       => $row->id_user,
                 'nama'          => $row->nama,
-                'pendidikan'    => $this->valuePendidikan($row->id_user),
-                'non_pend'      => $this->valuePendNonFormal($row->id_user),
-                'pengalaman'    => $this->valueRiwayatPekerjaan($row->id_user),
-                'nilai'         => $this->valueIPK($row->id_user),
-                'umur'          => $this->valueUmur($row->id_user),
+                'pendidikan'    => $this->valuePendidikan($row->id_user)."<p class='float-right text-success m-0'>(30%)</p>",
+                'non_pend'      => $this->valuePendNonFormal($row->id_user)."<p class='float-right text-success m-0'>(5%)</p>",
+                'pengalaman'    => $this->valueRiwayatPekerjaan($row->id_user)."<p class='float-right text-success m-0'>(30%)</p>",
+                'nilai'         => $this->valueIPK($row->id_user)."<p class='float-right text-success m-0'>(30%)</p>",
+                'umur'          => $this->valueUmur($row->id_user)."<p class='float-right text-success m-0'>(5%)</p>",
                 'sum'           => $this->sum($row->id_user)
             ];
         }
@@ -259,7 +259,7 @@ class SpkModel extends CI_Model {
     public function sum($id_user)
     {
         // return $this->arrayOfMax()['maxUmur'];
-        return ($this->valuePendidikan($id_user)*0.3) + ($this->valuePendNonFormal($id_user)*0.05) + ($this->valueRiwayatPekerjaan($id_user)*0.4) + ($this->valueIPK($id_user)*0.3) + ($this->valueUmur($id_user)*0.05);
+        return ($this->valuePendidikan($id_user)*0.3) + ($this->valuePendNonFormal($id_user)*0.05) + ($this->valueRiwayatPekerjaan($id_user)*0.3) + ($this->valueIPK($id_user)*0.3) + ($this->valueUmur($id_user)*0.05);
     }
 
 }
