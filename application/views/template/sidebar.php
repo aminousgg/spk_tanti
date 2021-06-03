@@ -46,7 +46,7 @@
                       <p>Data Diri</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="<?= base_url('main/riwayatpendidikan') ?>" class="nav-link <?php if($side_row == 2){ echo "active"; } ?>">
                       <i class="nav-icon fas fa-th"></i>
                       <p>Rekrutmen</p>
@@ -57,7 +57,7 @@
                       <i class="nav-icon fas fa-th"></i>
                       <p>Daftar Lamaran</p>
                     </a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <a href="<?= base_url() ?>" class="nav-link">
                       <i class="nav-icon fas fa-th"></i>

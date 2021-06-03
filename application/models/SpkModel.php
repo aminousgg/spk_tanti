@@ -140,13 +140,14 @@ class SpkModel extends CI_Model {
         $get_awal = (int)$this->db->select('tahun_mulai')
                              ->order_by('tahun_mulai','asc')
                              ->limit(1)
-                             ->get_where('riwayat_kerja')->row_array()['tahun_mulai'];
+                             ->get_where('riwayat_kerja',['id_user'=>$id_user])->row_array()['tahun_mulai'];
         $get_akhir = (int)$this->db->select('tahun_selesai')
                              ->order_by('tahun_selesai','desc')
                              ->limit(1)
-                             ->get_where('riwayat_kerja')->row_array()['tahun_selesai'];
-        $selisih = $get_akhir - $get_awal;
-        if($selisih == 1)
+                             ->get_where('riwayat_kerja',['id_user'=>$id_user])->row_array()['tahun_selesai'];
+        $selisih = (int)$get_akhir - (int)$get_awal;
+        // echo $selisih; die;
+        if($selisih>0 && $selisih<=1)
         {
             return round(0.7/$this->arrayOfMax()['maxKerja'], 4);
         }
