@@ -67,7 +67,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
                             <?php $i=1; foreach($pelamar as $row){ ?>
                                 <tr>
                                     <td><?= $row['nama'] ?></td>
@@ -80,6 +79,17 @@
                                 </tr>
                             <?php $i++; } ?>
                         </tbody>
+                        <tfoot>
+                          <tr>
+                              <th>Nilai Maks</th>
+                              <th class="text-primary"><?= $max['maxPend'] ?></th>
+                              <th class="text-primary"><?= $max['maxnPend'] ?></th>
+                              <th class="text-primary"><?= $max['maxKerja'] ?></th>
+                              <th class="text-primary"><?= $max['maxIpk'] ?></th>
+                              <th class="text-primary"><?= $max['maxUmur'] ?></th>
+                              <th>&nbsp;</th>
+                          </tr>
+                        </tfoot>
                     </table>
                   </div>
                 </div>

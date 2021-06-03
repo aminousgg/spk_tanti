@@ -157,7 +157,7 @@ class SpkModel extends CI_Model {
         }
         elseif($selisih == 0)
         {
-            return round(0.1/$this->arrayOfMax()['maxKerja'], 4);
+            return round(0.2/$this->arrayOfMax()['maxKerja'], 4);
         }
         else
         {

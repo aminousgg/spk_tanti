@@ -21,7 +21,8 @@ class Spk extends CI_Controller {
       $data = [
         'judul' => "Analisis Hasil Seleksi",
         'side_row'=> 2,
-        'pelamar'=> $this->spk->getAnalitc()
+        'pelamar'=> $this->spk->getAnalitc(),
+        'max' => $this->spk->arrayOfMax()
       ];
       $this->load->view('admin/spk',$data);
   }
