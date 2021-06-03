@@ -12,16 +12,19 @@ class Spk extends CI_Controller {
         // $this->load->model('PelamarModel', 'pelamar');
         $this->sesi = $this->session->userdata('sesi_admin');
         $this->load->model('SpkModel', 'spk');
-    }
-    public function index()
-    {
-        $data = [
-          'judul' => "Analisis Hasil Seleksi",
-          'side_row'=> 2,
-          'pelamar'=> $this->spk->getAnalitc()
-        ];
-        $this->load->view('admin/spk',$data);
-    }
+  }
+  public function index()
+  {
+      // var_dump($this->spk->arrayOfMax()['maxPend']); die;
+      // die;
+      // $max = $this->spk->arrayOfMax();
+      $data = [
+        'judul' => "Analisis Hasil Seleksi",
+        'side_row'=> 2,
+        'pelamar'=> $this->spk->getAnalitc()
+      ];
+      $this->load->view('admin/spk',$data);
+  }
 
     // public function logout(){
     //   $this->session->unset_userdata('sesi');
