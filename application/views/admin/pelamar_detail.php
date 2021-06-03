@@ -1,3 +1,6 @@
+<?php 
+  $id = $this->uri->segment(4);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,11 +104,11 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Navbar -->
-  <?php $this->load->view('template/header') ?>
+  <?php $this->load->view('admin/template/header') ?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <?php $this->load->view('template/sidebar') ?>
+  <?php $this->load->view('admin/template/sidebar') ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -186,7 +189,7 @@
                 <div class="card data_diri">
                   <div class="card-header">Mohon Mengisi Datadiri</div>
                   <div class="card-body">
-                    <?= form_open('main/insertDatadiri') ?>
+                    <?= form_open('admin/update/insertDatadiri/'.$id) ?>
                       <div class="form-group">
                         <label>Nama</label>
                         <input type="text" autocomplete="off" class="form-control" value="<?= $pelamar['nama'] ?>" placeholder="Nama Lengkap" name="nama">
@@ -291,7 +294,7 @@
                         <button class="btn btn-success float-right" data-toggle="modal" data-target="#m_pend_nonformal">Tambah</button>
                       </div>
                     </div>
-                    <?= form_open('main/insertNilai') ?>
+                    <?= form_open('admin/update/insertNilai/'.$id) ?>
                       <div class="row">
                             <p class="mb-0 ml-2 text-danger">Mohon mengisi nilai pada pendidikan terakhir anda !</p>
                             <div class="col-6">
@@ -395,7 +398,7 @@
                         </div>
                       </div>
                     <?php }else{ ?>
-                      <?= form_open_multipart('main/insertBerkas') ?>
+                      <?= form_open_multipart('admin/update/insertBerkas/'.$id) ?>
                         <div class="container">
                           <div class="row">
                             <div class="col-md-12">
@@ -502,7 +505,7 @@
   <div class="modal fade" id="m_pend_formal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <?= form_open('main/insertRiwayatPendidikan') ?>
+        <?= form_open('admin/update/insertRiwayatPendidikan/'.$id) ?>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Tambah Pendidikan Formal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -542,7 +545,7 @@
   <div class="modal fade" id="me_pend_formal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <?= form_open('main/editRiwayatPendidikan') ?>
+        <?= form_open('admin/update/editRiwayatPendidikan/'.$id) ?>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Tambah Pendidikan Formal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -583,7 +586,7 @@
   <div class="modal fade" id="me_pend_nformal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <?= form_open('main/editRiwayatPendidikan') ?>
+        <?= form_open('admin/update/editRiwayatPendidikan/'.$id) ?>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Tambah Pendidikan Formal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -621,7 +624,7 @@
   <div class="modal fade" id="m_pend_nonformal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <?= form_open('main/insertRiwayatPendidikan') ?>
+        <?= form_open('admin/update/insertRiwayatPendidikan/'.$id) ?>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Tambah Pendidikan Non Formal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -651,7 +654,7 @@
   <div class="modal fade" id="m_pekerjaan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <?= form_open('main/insertRiwayatPekerjaan') ?>
+        <?= form_open('admin/update/insertRiwayatPekerjaan/'.$id) ?>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Tambah Pendidikan Formal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -690,7 +693,7 @@
   <div class="modal fade" id="medit_pekerjaan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <?= form_open('main/editRiwayatPekerjaan') ?>
+        <?= form_open('admin/update/editRiwayatPekerjaan/'.$id) ?>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Update Pendidikan Formal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -731,7 +734,7 @@
   <div class="modal fade" id="m_profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <?= form_open_multipart('main/updateProfile') ?>
+        <?= form_open_multipart('admin/update/updateProfile/'.$id) ?>
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Update Image Profile</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -773,7 +776,7 @@
   </div>
 
   <!-- Main footer -->
-  <?php $this->load->view('template/footer') ?>
+  <?php $this->load->view('admin/template/footer') ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
