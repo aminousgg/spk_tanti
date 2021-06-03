@@ -109,7 +109,7 @@ class SpkModel extends CI_Model {
         }
         else
         {
-            return round(0/$this->arrayOfMax()['maxPend'], 4);
+            return 0;
         }
         
     }
@@ -131,7 +131,7 @@ class SpkModel extends CI_Model {
         }
         else
         {
-            return round(0/$this->arrayOfMax()['maxnPend'], 4);
+            return 0;
         }
     }
 
@@ -160,7 +160,7 @@ class SpkModel extends CI_Model {
         }
         else
         {
-            return round(0/$this->arrayOfMax()['maxKerja'], 4);
+            return 0;
         }
 
     }
@@ -180,7 +180,7 @@ class SpkModel extends CI_Model {
             // return $hasil;
             if($hasil<40)
             {
-                return 0/$this->arrayOfMax()['maxIpk'];
+                return 0;
             }
             elseif($hasil>40 && $hasil<=55)
             {
@@ -203,7 +203,7 @@ class SpkModel extends CI_Model {
         {
             if((int)$pelamar['nilai']<40)
             {
-                return 0/$this->arrayOfMax()['maxIpk'];
+                return 0;
             }
             elseif((int)$pelamar['nilai']>40 && (int)$pelamar['nilai']<=55)
             {
@@ -224,7 +224,7 @@ class SpkModel extends CI_Model {
         }
         else
         {
-            return round(0/$this->arrayOfMax()['maxIpk'], 4);
+            return 0;
         }
     }
 
