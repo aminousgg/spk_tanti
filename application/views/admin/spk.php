@@ -54,7 +54,7 @@
                 <div class="card">
                   <div class="card-header">Hasil Analisis</div>
                   <div class="card-body">
-                    <table class="table table-hovered tb_pelamar">
+                    <table class="table table-hovered table-bordered tb_pelamar">
                         <thead>
                             <tr>
                                 <th>Nama</th>
