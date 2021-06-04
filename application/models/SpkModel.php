@@ -26,6 +26,32 @@ class SpkModel extends CI_Model {
         return $pelamar;
     }
 
+    public function getProcessView()
+    {
+        // var_dump($this->arrayOfMax()['maxPend']); die;
+        $this->load->model('MaxValue','val');
+        $data = $this->db->select('id, id_user, nama')
+                         ->where('nama is NOT NULL', NULL, FALSE)
+                         ->get('pelamar')->result();
+        $pelamar = [];
+        foreach($data as $row)
+        {
+            $pelamar[] = [
+                'id'            => $row->id,
+                'id_user'       => $row->id_user,
+                'nama'          => $row->nama,
+                'pendidikan'    => $this->val->valuePendidikan($row->id_user)." / ".$this->arrayOfMax()['maxPend']." = <p class='float-right text-success m-0'>".$this->valuePendidikan($row->id_user)."</p>",
+                'non_pend'      => $this->val->valuePendNonFormal($row->id_user)." / ".$this->arrayOfMax()['maxnPend']." = <p class='float-right text-success m-0'>".$this->valuePendNonFormal($row->id_user)."</p>",
+                'pengalaman'    => $this->val->valueRiwayatPekerjaan($row->id_user)." / ".$this->arrayOfMax()['maxKerja']." = <p class='float-right text-success m-0'>".$this->valueRiwayatPekerjaan($row->id_user)."</p>",
+                'nilai'         => $this->val->valueIPK($row->id_user)." / ".$this->arrayOfMax()['maxIpk']." = <p class='float-right text-success m-0'>".$this->valueIPK($row->id_user)."</p>",
+                'umur'          => $this->val->valueUmur($row->id_user)." / ".$this->arrayOfMax()['maxUmur']." = <p class='float-right text-success m-0'>".$this->valueUmur($row->id_user)."</p>",
+                'sum'           => $this->sum($row->id_user)
+            ];
+        }
+        return $pelamar;
+    }
+
+
 
     public function arrayOfMax()
     {

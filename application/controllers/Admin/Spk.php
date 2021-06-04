@@ -27,6 +27,17 @@ class Spk extends CI_Controller {
       $this->load->view('admin/spk',$data);
   }
 
+  public function perhitungan()
+  {
+      $data = [
+        'judul' => "Proses Perhitungan",
+        'side_row'=> 3,
+        'pelamar'=> $this->spk->getProcessView(),
+        'max' => $this->spk->arrayOfMax()
+      ];
+      $this->load->view('admin/perhitungan',$data);
+  }
+
     // public function logout(){
     //   $this->session->unset_userdata('sesi');
     //   redirect(base_url('login'));

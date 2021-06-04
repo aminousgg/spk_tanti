@@ -55,7 +55,7 @@
                   <li class="nav-item">
                     <a href="#" class="nav-link <?php if($side_row == 3){ echo "active"; } ?>">
                       <i class="nav-icon fas fa-th"></i>
-                      <p>Rekrutmen</p>
+                      <p>Perhitungan</p>
                     </a>
                   </li>
                   <li class="nav-item">
