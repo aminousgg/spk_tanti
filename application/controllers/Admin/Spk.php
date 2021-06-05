@@ -33,7 +33,8 @@ class Spk extends CI_Controller {
         'judul' => "Proses Perhitungan",
         'side_row'=> 3,
         'pelamar'=> $this->spk->getProcessView(),
-        'max' => $this->spk->arrayOfMax()
+        'max' => $this->spk->arrayOfMax(),
+        'akurasi' => $this->spk->acuracy()
       ];
       $this->load->view('admin/perhitungan',$data);
   }
@@ -42,6 +43,17 @@ class Spk extends CI_Controller {
     //   $this->session->unset_userdata('sesi');
     //   redirect(base_url('login'));
     // }
+
+  public function bobot()
+  {
+    $data = [
+      'judul' => "Pembobotan",
+      'side_row'=> 4,
+      'pelamar'=> $this->spk->getProcessView(),
+      'max' => $this->spk->arrayOfMax()
+    ];
+    $this->load->view('admin/bobot',$data);
+  }
 
 
 }

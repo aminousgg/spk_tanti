@@ -89,6 +89,13 @@
                               <th class="text-primary"><?= $max['maxUmur'] ?></th>
                               <th>&nbsp;</th>
                           </tr>
+                          <tr>
+                              <th>Akurasi</th>
+                              <td colspan="6">
+                                <b>(100 - AVG)/Lenght</b> </br>
+                                (1 - <?= $akurasi['rata'] ?>) / <?= $akurasi['jml_pelamar'] ?> = <b class="text-info m-0"><?= $akurasi['result'] ?></b>
+                              </td>
+                          </tr>
                         </tfoot>
                     </table>
                   </div>

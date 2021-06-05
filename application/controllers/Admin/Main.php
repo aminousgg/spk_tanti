@@ -21,10 +21,10 @@ class Main extends CI_Controller {
         $this->load->view('admin/main',$data);
     }
 
-    // public function logout(){
-    //   $this->session->unset_userdata('sesi');
-    //   redirect(base_url('login'));
-    // }
+    public function logout(){
+      $this->session->unset_userdata('sesi_admin');
+      redirect(base_url('admin/akses'));
+    }
 
 
 }

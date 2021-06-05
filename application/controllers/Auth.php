@@ -76,7 +76,7 @@ class Auth extends CI_Controller {
     	];
     	$this->db->where($where);
     	$result = $this->db->get('auth');
-    	if($result->num_rows()>0)
+    	if($result->num_rows()>0 && $result->row_array()['level']=="User")
     	{
     		// login berhasil
     		$this->session->set_userdata('sesi', $result->row_array());

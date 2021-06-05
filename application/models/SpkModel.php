@@ -51,7 +51,25 @@ class SpkModel extends CI_Model {
         return $pelamar;
     }
 
-
+    public function acuracy()
+    {
+        $pelamar = $this->db->get('pelamar');
+        $jml = $pelamar->num_rows();
+        $data = $pelamar->result();
+        $total = 0;
+        foreach($data as $row)
+        {
+            $total = $total + $this->sum($row->id_user);
+        }
+        $rata2 = round($total/$jml, 4);
+        $result = (100 - $rata2)/(int)$jml;
+        return [
+            'jml_pelamar'   => $jml,
+            'total'         => $total,
+            'rata'          => $rata2,
+            'result'        => $result
+        ];
+    }
 
     public function arrayOfMax()
     {
@@ -285,7 +303,7 @@ class SpkModel extends CI_Model {
     public function sum($id_user)
     {
         // return $this->arrayOfMax()['maxUmur'];
-        return ($this->valuePendidikan($id_user)*0.3) + ($this->valuePendNonFormal($id_user)*0.05) + ($this->valueRiwayatPekerjaan($id_user)*0.3) + ($this->valueIPK($id_user)*0.3) + ($this->valueUmur($id_user)*0.05);
+        return round( ($this->valuePendidikan($id_user)*0.3) + ($this->valuePendNonFormal($id_user)*0.05) + ($this->valueRiwayatPekerjaan($id_user)*0.3) + ($this->valueIPK($id_user)*0.3) + ($this->valueUmur($id_user)*0.05), 4);
     }
 
 }

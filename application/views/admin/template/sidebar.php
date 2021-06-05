@@ -53,15 +53,15 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link <?php if($side_row == 3){ echo "active"; } ?>">
+                    <a href="<?= base_url('admin/spk/perhitungan') ?>" class="nav-link <?php if($side_row == 3){ echo "active"; } ?>">
                       <i class="nav-icon fas fa-th"></i>
                       <p>Perhitungan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= base_url('admin/spk/bobot') ?>" class="nav-link <?php if($side_row == 4){ echo "active"; } ?>">
                       <i class="nav-icon fas fa-th"></i>
-                      <p>List Apply</p>
+                      <p>Pembobotan</p>
                     </a>
                   </li>
                   <li class="nav-item">
